@@ -1,3 +1,8 @@
+== Purpose of this project demo
+
+To copy uploaded files on Quickbase selectively to other records (rows), this project entails the server-side processing for it.
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
