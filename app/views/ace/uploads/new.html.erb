@@ -1,0 +1,37 @@
+<%= form_tag({:action => :create},{:method => "post", :multipart => true, :id=> "upload_form", :name => "upload_form"}) do %>
+  <input type="hidden" name="related_customer" id="related_customer">
+  <table id="additional_attachments">
+    <thead>
+        <th>Document Name</th>
+        <th>Document Type</th>
+        <th>File Attachment</th>
+    </thead>
+    <tbody id="upload_set">
+    </tbody>
+  </table>
+
+  <table>
+    <tr>
+      <td align="right">
+        <input id="addButton" type="button" value="+" class="btn">
+        <input id="removeButton" type="button" value="-" class="btn btn-danger">
+      </td>
+    </tr>
+  </table>
+  <table>
+      <tr><td><input type="submit" value="Submit" class="btn"></td></tr>
+  </table>
+<% end %>
+
+<script type="text/template" id="upload_row">
+  <tr>
+    <td><input type="text" name="document_name_{{ count }}"></td>
+    <td>
+      <select name="document_type_{{ count }}" id="document_type_{{ count }}">
+        <option></option>
+        <%= options_for_select(@all) %>
+      </select>
+    </td>
+    <td><input type="file" name="file_attachment_{{ count }}"></td>
+  </tr>
+</script>
